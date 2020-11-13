@@ -1,0 +1,210 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*{
+	/*background-color: blue;*/
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #777;
+	padding: 30px;
+}
+/*
+h1{
+	padding-top: 0;
+	margin-top: 0;
+}*/
+
+.header{
+	position: relative;
+	height: 95vh;
+	background-image: linear-gradient(to right , rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)) , url(../img/hero.jpg);
+	background-size: cover;
+	/*background-position: left;*/
+	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+./*header::selection{
+	color: #fff;
+	background: #28b485;
+}*/
+
+
+.logo-box{
+	position: absolute;
+	top: 40px;
+	left: 40px;
+}
+
+.logo-box .logo{
+	height: 35px;
+}
+
+.text-box{
+	/*background-color: red;*/
+/*	width: fit-content;
+	margin: 0px auto;
+	padding-top: 10%;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.heading-primary{
+	color: #fff;
+	text-align: center;
+	backface-visibility: hidden;
+}
+
+.heading-primary-main{
+	font-size: 60px;
+	font-weight: 400;
+	display: block;
+	letter-spacing: 35px;
+	animation-name: moveInLeft;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
+	/*animation-iteration-count: infinite;*/
+}
+
+.heading-primary-main::selection {
+  /*color: red;*/
+  background: #28b485;
+}
+
+
+.heading-primary-sub{
+	font-size: 20px;
+	font-weight: 300;
+	display: block;
+	transform: translateX(-10px);
+	letter-spacing: 15px;
+	animation-name: moveInRight;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
+	/*animation-iteration-count: infinite;*/
+}
+
+.heading-primary-sub::selection {
+  background: #28b485;
+}
+
+.btn, .btn:link, .btn:visited{
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 40px;
+	display: inline-block;
+	margin-top: 40px;
+	border-radius: 50px;
+	/*letter-spacing: 5px;*/
+	/*transition: text-decoration .2s, :hover 1s;*/
+	transition: all .2s;
+	position: relative;
+}
+.btn-animated{
+	animation-name: moveInBottom;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-delay: .5s;
+	animation-fill-mode: backwards;
+}
+
+.btn:hover{
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active{
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white{
+	background-color: #fff;
+	color: #777;
+}
+
+.btn::after{
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 50px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: -1;
+	transition: all .4s;
+}
+
+.btn:hover::after{
+	transform: scale(1.4);
+	opacity: 0;
+}
+
+
+@keyframes moveInLeft{
+	0%{
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	80%{
+		opacity: 0.8;
+		transform: translateX(30px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+
+@keyframes moveInRight{
+	0%{
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	80%{
+		opacity: 0.8;
+		transform: translateX(-30px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateX(-10px);
+	}	
+}
+
+@keyframes moveInBottom{
+	0%{
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	80%{
+		opacity: 0.8;
+		transform: translateY(-10px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

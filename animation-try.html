@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+</head>
+<style type="text/css">
+	.first{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+		margin-bottom: 20px;
+		animation-name: trial;
+		/*animation-direction: alternate;*/
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+	}
+
+	.second{
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		animation-name: trial;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes trial{
+		0% {background-color: brown;}
+		50% {background-color: green;}
+		100% {background-color: violet;}
+	}
+</style>
+<body>
+	<div class="first"></div>
+	<div class="second"></div>
+</body>
+</html>
